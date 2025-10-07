@@ -1,5 +1,5 @@
 .card {
-  width: 250px;
+  /* width: 250px;
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 16px;
@@ -12,38 +12,46 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; */
+  /* width: 350px; */
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .produk-top {
-  text-align: center;
+  /* text-align: center; */
+  background: #f8f9fa;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+  position: relative;
 }
 
 .produk-top img {
-  width: 100%;
+  /* width: 100%;
   height: 160px;
   border-radius: 10px;
   background-color: white;
+  object-fit: contain; */
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
-.produk-top h3 {
-  /* font-size: 16px; */
-  text-align: left;
-  margin: 0;
-}
-
-.produk-bottom {
-  margin-top: auto;
-}
-
-.deskripsi-produk {
-  font-size: 14px;
-  text-align: left;
-}
-
 .diskon {
-  text-align: end;
+  /* text-align: end;
   color: var(--discount-text);
   font-weight: 600;
   font-size: 0.75rem;
@@ -54,37 +62,104 @@
   margin: 0.25rem 0;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border: 1px solid #fecaca;
+  border: 1px solid #fecaca; */
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: #ffffff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(245, 87, 108, 0.3);
 }
 
-.row {
+/* .produk-top h3 {
+  font-size: 16px;
+  text-align: left;
+  margin: 0;
+} */
+
+.produk-bottom {
+  /* margin-top: auto; */
+  padding: 1.5rem;
+  flex-grow: 1;
   display: flex;
+  flex-direction: column;
+}
+
+.produk-judul {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
+.produk-deskripsi {
+  /* font-size: 14px;
+  text-align: left; */
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.produk-footer {
+  /* display: flex;
   flex-direction: row;
+  justify-content: space-between; */
+  display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
 .harga {
-  color: var(--price-color);
+  /* color: var(--price-color);
   font-weight: 700;
   font-size: 1.125rem;
   margin: 0.5rem 0;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.025em; */
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #667eea;
 }
 
 .stok {
-  color: var(--text-tertiary);
+  /* color: var(--text-tertiary);
   font-size: 0.875rem;
   margin: 0.25rem 0;
+  font-weight: 500; */
+  font-size: 0.85rem;
+  color: #718096;
   font-weight: 500;
 }
 
+.stok-value {
+  color: #48bb78;
+  font-weight: 600;
+}
+
 .card-btn {
-  width: 100%;
+  /* width: 100%;
   margin-top: auto;
   background: #3b82f6;
   color: white;
   border: none;
   padding: 8px 16px;
   border-radius: 6px;
+  cursor: pointer; */
+  background: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
   cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  font-size: 0.95rem;
 }

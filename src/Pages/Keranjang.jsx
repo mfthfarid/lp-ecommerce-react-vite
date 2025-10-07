@@ -36,7 +36,7 @@ const Keranjang = () => {
         <button
           onClick={() => setIsCartOpen(!isCartOpen)}
           className="cart-icon-btn">
-          <ShoppingCart size={24} />
+          <ShoppingCart size={30} />
           {getTotalItems() > 0 && (
             <span className="cart-badge">{getTotalItems()}</span>
           )}

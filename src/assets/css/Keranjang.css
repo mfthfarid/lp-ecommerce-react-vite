@@ -13,7 +13,16 @@
 }
 
 .shopping-cart-container {
-  position: relative;
+  /* position: relative; */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 /* Catalog Section */
@@ -92,6 +101,11 @@
 /* Cart Icon */
 .cart-icon-container {
   position: relative;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cart-icon-btn {

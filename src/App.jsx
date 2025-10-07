@@ -23,7 +23,7 @@ function App() {
       <CartProvider>
         <Router>
           <div className="app-container">
-            <Header className="header" />
+            <Header />
 
             <div className="content">
               <Routes>

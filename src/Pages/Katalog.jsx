@@ -35,10 +35,10 @@ function Katalog() {
       </div>
 
       {/* Produk */}
-      <section className="catalog">
-        <h2>Katalog Produk Kami</h2>
+      <section className="catalog-section">
+        <h2 className="catalog-judul">Katalog Produk Kami</h2>
         {/* List Produk */}
-        <div className="catalog">
+        <div className="catalog-grid">
           {filteredProducts.map((item) => (
             <Card key={item.id} produk={item}></Card>
           ))}
@@ -46,10 +46,10 @@ function Katalog() {
       </section>
 
       {/* Tombol Cart */}
-      <button className="cart-fab" onClick={() => setIsCartOpen(true)}>
-        <ShoppingCartComponent size={24} />
-        {/* {cart.length > 0 && <span className="cart-badge">{cart.length}</span>} */}
-      </button>
+      <ShoppingCartComponent size={40} />
+      {/* <button className="cart-fab" onClick={() => setIsCartOpen(true)}>
+        {cart.length > 0 && <span className="cart-badge">{cart.length}</span>}
+      </button> */}
     </div>
   );
 }

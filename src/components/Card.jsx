@@ -7,29 +7,32 @@ function Card({ produk }) {
   const { addToCart } = useCart();
   const handleAddToCart = () => {
     try {
-        addToCart(product);
-        setIsAdded(true);
-        setTimeout(() => setIsAdded(false), 1500);
+      addToCart(product);
+      setIsAdded(true);
+      setTimeout(() => setIsAdded(false), 1500);
     } catch (error) {
-        console.error('Gagal menambahkan ke keranjang:', error);
+      console.error("Gagal menambahkan ke keranjang:", error);
     }
-};
+  };
 
   return (
     <div className="card">
       <div className="produk-top">
         <img src={produk.imageUrl} alt={produk.title} />
-        <h3>{produk.title}</h3>
+        {produk.diskon > 0 && (
+          <span className="diskon">Diskon {produk.diskon}%</span>
+        )}
       </div>
 
       <div className="produk-bottom">
-        <p className="deskripsi-produk">{produk.description}</p>
-        {produk.diskon > 0 && <p className="diskon">Diskon {produk.diskon}%</p>}
-        <div className="row">
-          <p className="harga">Rp {produk.harga.toLocaleString()}</p>
-          <p className="stok">Stok: {produk.stok}</p>
+        <h3 className="produk-judul">{produk.title}</h3>
+        <p className="produk-deskripsi">{produk.description}</p>
+        <div className="produk-footer">
+          <div className="harga">Rp {produk.harga.toLocaleString()}</div>
+          <div className="stok">
+            Stok: <span className="stok-value">{produk.stok}</span>
+          </div>
         </div>
-        {/* {children} */}
         <button
           className="card-btn"
           onClick={() => addToCart(produk)}

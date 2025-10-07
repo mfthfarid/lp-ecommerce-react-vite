@@ -1,10 +1,13 @@
 import React from "react";
+import { Menu, X } from "lucide-react";
+import { useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "react-toastify";
 import "../../assets/css/Header.css";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -21,18 +24,72 @@ function Header() {
   // };
 
   return (
-    <header
-      style={{
-        backgroundColor: "#03b6ceff",
-        color: "white",
-        padding: "15px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}>
-      <h1 style={{ margin: 0 }}>{websiteName}</h1>
+    <header className="header">
+      <div className="nav-container">
+        <h1 className="logo">{websiteName}</h1>
+        <div className="dekstop-menu">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            Home
+          </NavLink>
+          <NavLink
+            to="/katalog"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            Katalog
+          </NavLink>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            About
+          </NavLink>
+          <NavLink
+            to="/kontak"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            Kontak
+          </NavLink>
+          <NavLink
+            to="/login"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }>
+            Login
+          </NavLink>
+        </div>
+        <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
 
-      <nav>
+      {isOpen && (
+        <div className="mobile-menu">
+          <Link to="/" className="mobile-link">
+            Home
+          </Link>
+          <Link to="/katalog" className="mobile-link">
+            Katalog
+          </Link>
+          <Link to="/about" className="mobile-link">
+            About
+          </Link>
+          <Link to="/kontak" className="mobile-link">
+            Kontak
+          </Link>
+          <Link to="/login" className="mobile-login-btn">
+            Login
+          </Link>
+        </div>
+      )}
+
+      {/* <nav>
         <ul
           style={{
             listStyle: "none",
@@ -94,7 +151,7 @@ function Header() {
             )}
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
   );
 }
