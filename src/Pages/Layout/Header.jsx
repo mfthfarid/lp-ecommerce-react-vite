@@ -56,13 +56,26 @@ function Header() {
             }>
             Kontak
           </NavLink>
-          <NavLink
+          {user ? (
+            <button onClick={handleLogout} className="nav-link logout-btn">
+              Logout
+            </button>
+          ) : (
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }>
+              Login
+            </NavLink>
+          )}
+          {/* <NavLink
             to="/login"
             className={({ isActive }) =>
               isActive ? "nav-link active" : "nav-link"
             }>
             Login
-          </NavLink>
+          </NavLink> */}
         </div>
         <button className="menu-btn" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -83,9 +96,22 @@ function Header() {
           <Link to="/kontak" className="mobile-link">
             Kontak
           </Link>
-          <Link to="/login" className="mobile-login-btn">
+          {user ? (
+            <button onClick={handleLogout} className="nav-link logout-btn">
+              Logout
+            </button>
+          ) : (
+            <NavLink
+              to="/login"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }>
+              Login
+            </NavLink>
+          )}
+          {/* <Link to="/login" className="mobile-login-btn">
             Login
-          </Link>
+          </Link> */}
         </div>
       )}
 

@@ -22,16 +22,19 @@ function Katalog() {
     <div className="catalog-container">
       {/* Filter */}
       <div className="category-container">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setSelectedCategory(cat)}
-            className={`category-button ${
-              selectedCategory === cat ? "active" : ""
-            }`}>
-            {cat}
-          </button>
-        ))}
+        <h5 className="category-title">Pilih Kategori</h5>
+        <div className="category-buttons">
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setSelectedCategory(cat)}
+              className={`category-btn ${
+                selectedCategory === cat ? "active" : ""
+              }`}>
+              {cat}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Produk */}

@@ -3,6 +3,9 @@ import { useForm } from "react-hook-form";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "@/context/AuthContext";
 import { toast } from "react-toastify";
+// import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 import styles from "./Auth.module.css";
 import Toast from "@/components/Toast";
 
@@ -12,12 +15,17 @@ export default function LoginForm({ onSwitchToRegister }) {
     handleSubmit,
     formState: { errors },
   } = useForm({ mode: "onChange" });
+  const [showPassword, setShowPassword] = useState(false);
   const [focusedField, setFocusedField] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const { login } = useAuth(); // ✅ ambil fungsi login dari AuthContext
   const navigate = useNavigate();
   const location = useLocation();
+  const togglePassword = () => setShowPassword(!showPassword);
+  const handleRegisterClick = () => {
+    navigate("/register");
+  };
 
   // Ambil path asal, misal dari ProtectedRoute
   const from = location.state?.from?.pathname || "/";
@@ -72,22 +80,27 @@ export default function LoginForm({ onSwitchToRegister }) {
 
           <div className={styles.formGroup}>
             <label className={styles.label}>Password</label>
-            <input
-              type="password"
-              className={`${styles.input} ${
-                focusedField === "password" ? styles.inputFocus : ""
-              } ${errors.password ? styles.inputError : ""}`}
-              onFocus={() => setFocusedField("password")}
-              onBlur={() => setFocusedField("")}
-              {...register("password", {
-                required: "Password wajib diisi",
-                minLength: {
-                  value: 6,
-                  message: "Password minimal 6 karakter",
-                },
-              })}
-              placeholder="••••••••"
-            />
+            <div className={styles.passwordWrapper}>
+              <input
+                type={showPassword ? "text" : "password"}
+                className={`${styles.input} ${
+                  focusedField === "password" ? styles.inputFocus : ""
+                } ${errors.password ? styles.inputError : ""}`}
+                onFocus={() => setFocusedField("password")}
+                onBlur={() => setFocusedField("")}
+                {...register("password", {
+                  required: "Password wajib diisi",
+                  minLength: {
+                    value: 6,
+                    message: "Password minimal 6 karakter",
+                  },
+                })}
+                placeholder="••••••••"
+              />
+              <span className={styles.eyeIcon} onClick={togglePassword}>
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </span>
+            </div>
             {errors.password && (
               <span className={styles.error}>{errors.password.message}</span>
             )}
@@ -104,7 +117,7 @@ export default function LoginForm({ onSwitchToRegister }) {
 
         <p className={styles.switchText}>
           Belum punya akun?{" "}
-          <span className={styles.link} onClick={onSwitchToRegister}>
+          <span className={styles.link} onClick={handleRegisterClick}>
             Daftar sekarang
           </span>
         </p>

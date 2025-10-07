@@ -1,5 +1,6 @@
 import React from "react";
 import "../assets/css/Home.css";
+import { Link } from "lucide-react";
 // import Katalog from "../Pages/Katalog";
 
 function MainContent({ userStatus }) {
@@ -26,7 +27,21 @@ function MainContent({ userStatus }) {
   ];
 
   return (
-    <main style={{ padding: "1px", minHeight: "400px" }}>
+    <main className="hero">
+      <div className="hero-content">
+        <h1>Selamat Datang di Toko Snack</h1>
+        <p>
+          Temukan berbagai pilihan snack favorit Anda dengan harga terbaik. Kami
+          menyediakan snack berkualitas untuk keluarga Indonesia.
+        </p>
+        {/* <Link to={"/katalog"} className="cta-button">
+          Lihat Katalog
+        </Link> */}
+        <a href="/katalog" className="cta-button">
+          Belanja Sekarang
+        </a>
+      </div>
+
       {/* <section>
         <div className="home">
           <h2>Selamat Datang di platform kami</h2>
@@ -71,7 +86,7 @@ function MainContent({ userStatus }) {
       </section> */}
 
       {/* Hero Section */}
-      <section className="hero">
+      {/* <section className="hero">
         <div className="home">
           <h1>Selamat Datang di Website Kami</h1>
           <p>Kami menyediakan layanan terbaik untuk Anda</p>
@@ -118,10 +133,10 @@ function MainContent({ userStatus }) {
             )}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Section */}
-      <section className="services">
+      {/* <section className="services">
         <div className="home">
           <h2>Layanan Kami</h2>
           <div className="service-list">
@@ -133,7 +148,7 @@ function MainContent({ userStatus }) {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       {/* <Katalog /> */}
     </main>
   );

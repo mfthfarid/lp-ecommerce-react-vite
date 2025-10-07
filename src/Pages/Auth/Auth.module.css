@@ -69,6 +69,7 @@
   transition: all 0.2s ease;
   outline: none;
   font-family: inherit;
+  background-color: white;
 }
 
 .input::placeholder {
@@ -203,6 +204,8 @@
   transition: all 0.2s ease;
   outline: none;
   font-family: inherit;
+  color: black;
+  background-color: white;
 }
 
 .input::placeholder {
@@ -216,6 +219,30 @@
 
 .inputError {
   border-color: #f56565;
+}
+
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.passwordWrapper input {
+  width: 100%;
+  padding-right: 40px; /* beri ruang untuk icon di dalam input */
+  box-sizing: border-box;
+}
+
+.eyeIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+}
+
+.eyeIcon:hover {
+  color: #333;
 }
 
 .error {
