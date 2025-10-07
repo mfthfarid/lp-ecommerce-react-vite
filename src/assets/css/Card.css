@@ -1,0 +1,90 @@
+.card {
+  width: 250px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  background: #caddff;
+  flex-shrink: 0;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.produk-top {
+  text-align: center;
+}
+
+.produk-top img {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  background-color: white;
+  object-fit: contain;
+}
+
+.produk-top h3 {
+  /* font-size: 16px; */
+  text-align: left;
+  margin: 0;
+}
+
+.produk-bottom {
+  margin-top: auto;
+}
+
+.deskripsi-produk {
+  font-size: 14px;
+  text-align: left;
+}
+
+.diskon {
+  text-align: end;
+  color: var(--discount-text);
+  font-weight: 600;
+  font-size: 0.75rem;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  display: inline-block;
+  margin: 0.25rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1px solid #fecaca;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.harga {
+  color: var(--price-color);
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin: 0.5rem 0;
+  letter-spacing: -0.025em;
+}
+
+.stok {
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+  font-weight: 500;
+}
+
+.card-btn {
+  width: 100%;
+  margin-top: auto;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}

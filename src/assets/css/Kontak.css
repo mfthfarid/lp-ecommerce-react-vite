@@ -1,0 +1,14 @@
+.form-control {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff; /* putih */
+  color: #000; /* teks hitam */
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+.form-control::placeholder {
+  color: #888;
+}

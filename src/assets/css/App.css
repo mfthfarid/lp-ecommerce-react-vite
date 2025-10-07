@@ -1,0 +1,26 @@
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex: 1; /* konten akan mengisi ruang di antara header & footer */
+  /* display: flex; */
+  /* padding: 50px; */
+  background-color: rgb(107, 107, 107);
+}

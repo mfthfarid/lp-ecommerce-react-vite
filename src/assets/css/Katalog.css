@@ -1,0 +1,246 @@
+.catalog-container {
+  flex: 1;
+  padding: 20px;
+}
+
+.category-container {
+  margin-bottom: 15px;
+}
+
+.category-button {
+  color: var(--text-primary);
+  font-weight: bold;
+  padding: 8px 16px;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+}
+
+.category-button.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+/* Catalog Section */
+.catalog h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+.catalog .catalog {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+}
+
+/* Custom scrollbar untuk browser Webkit */
+.catalog .catalog::-webkit-scrollbar {
+  height: 6px;
+}
+
+.catalog .catalog::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.catalog .catalog::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.catalog .catalog::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Card styling untuk katalog */
+.catalog .catalog > * {
+  flex-shrink: 0;
+  min-width: 200px;
+}
+
+/* FAB Cart */
+.cart-fab {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #3b82f6;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 12px;
+  padding: 2px 6px;
+}
+
+/* Drawer Cart */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background: rgb(232, 248, 255);
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  overflow-y: auto;
+  z-index: 100;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.cart-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-right: 12px;
+}
+
+.cart-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.checkout-btn {
+  width: 100%;
+  background: green;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Shopping Cart Component Styles */
+
+.shopping-cart-container {
+  position: relative;
+}
+
+/* Catalog Section */
+.catalog h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.category-container {
+  /* margin-bottom: 1.5rem; */
+  padding: 20px;
+  /* background-color: #f9fafb; */
+  border-radius: 0.5rem;
+}
+
+.category-button {
+  /* display: flex; */
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: thin;
+  border-radius: 10px;
+  /* padding: 10px; */
+  margin-bottom: 10px;
+  margin-right: 10px;
+
+  background-color: white;
+  border: 1px solid #007bff;
+  /* borderRadius: 20px;   */
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Custom scrollbar untuk browser Webkit */
+.catalog .catalog::-webkit-scrollbar {
+  height: 6px;
+}
+
+.catalog .catalog::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.catalog .catalog::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.catalog .catalog::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* Card styling untuk katalog */
+.catalog .catalog > * {
+  flex-shrink: 0;
+  min-width: 200px;
+}
+
+Cart Icon .cart-icon-container {
+  position: relative;
+}
+
+.cart-icon-btn {
+  position: relative;
+  background-color: #3b82f6;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+}
+
+.cart-icon-btn:hover {
+  background-color: #2563eb;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  background-color: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  border-radius: 9999px;
+  height: 1.5rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
